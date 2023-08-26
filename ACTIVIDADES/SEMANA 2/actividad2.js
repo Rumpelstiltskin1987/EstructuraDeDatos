@@ -1,6 +1,10 @@
-const contacts = [];
+const contacts = [
 
-const phoneNumbers = [];
+];
+
+const phoneNumbers = [
+
+];
 
 const addContact = (contact, phonenumber) => {
     contacts.push(contact);
@@ -13,7 +17,7 @@ const editContact = (contact, phonenumber) => {
     phoneNumbers[pos] = phonenumber;
 }
 
-const deleteContact = (contact, phonenumber) => {
+const deleteContact = (contact) => {
     let pos = contact.indexOf(contact);
     contacts.splice(pos, 1);
     phoneNumbers.splice(pos, 1);
@@ -41,7 +45,7 @@ const agenda = (actionInput, name, phone) =>{
             editContact(name,phone);
             break;
         case "3":
-            deleteContact(name,phone);
+            deleteContact(name);
             break;
         default:
             console.log("Opción no válida, ingrese el número de la opción")
