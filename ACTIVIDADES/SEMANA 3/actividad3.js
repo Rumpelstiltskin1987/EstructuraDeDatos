@@ -24,7 +24,12 @@ const addRatings = (name, subject, rating) => {
     let indexStudent = students.indexOf(name);
     let indexSubject = schoolSubject.indexOf(subject);
 
-    console.log(`Indice estudiante: ${indexStudent} Indice materia: ${indexSubject}`);
+    ratings[indexStudent][indexSubject] = rating;
+}
+
+const editRating = (name, subject, rating) => {
+    let indexStudent = students.indexOf(name);
+    let indexSubject = schoolSubject.indexOf(subject);
 
     ratings[indexStudent][indexSubject] = rating;
 }
@@ -43,7 +48,7 @@ const printSchoolSubject = () => {
     }
 }
 
-const printRating = () => {
+const printRatings = () => {
 
     for (let a = 0; a <= students.length - 1; a++){
         for (let b = 0; b <= schoolSubject.length - 1; b++){
@@ -66,9 +71,11 @@ const school = (actionInput, name, subject, rating) => {
             addSchoolSubject(subject);
             break;
         case "3":
-            addRatings(name,subject,rating)
+            addRatings(name,subject,rating);
+        case "4":
+            editRating(name,subject,rating);
         default:
-            console.log("Opción no válida, ingrese el número de la opción")
+            console.log("Opción no válida, ingrese el número de la opción");
     }
 }
 
@@ -76,7 +83,7 @@ school("1","Enrique","","");
 console.log("=====================================================");
 console.log("Se ha añadido un alumno");
 console.log("=====================================================");
-school("1","Guzman");
+school("1","Guzman","","");
 console.log("=====================================================");
 console.log("Se ha añadido un alumno");
 console.log("=====================================================");
@@ -120,11 +127,76 @@ school("3","Enrique","Historia","8.0");
 console.log("=====================================================");
 console.log("Se ha añadido una calificación");
 console.log("=====================================================");
+school("3","Guzman","Español","9.5");
+console.log("=====================================================");
+console.log("Se ha añadido una calificación");
+console.log("=====================================================");
+school("3","Guzman","Matemáticas","8.5");
+console.log("=====================================================");
+console.log("Se ha añadido una calificación");
+console.log("=====================================================");
+school("3","Guzman","Geografía","9.0");
+console.log("=====================================================");
+console.log("Se ha añadido una calificación");
+console.log("=====================================================");
+school("3","Guzman","Historia","8.0");
+console.log("=====================================================");
+console.log("Se ha añadido una calificación");
+console.log("=====================================================");
+school("3","Brian","Español","9.5");
+console.log("=====================================================");
+console.log("Se ha añadido una calificación");
+console.log("=====================================================");
+school("3","Brian","Matemáticas","8.5");
+console.log("=====================================================");
+console.log("Se ha añadido una calificación");
+console.log("=====================================================");
+school("3","Brian","Geografía","9.0");
+console.log("=====================================================");
+console.log("Se ha añadido una calificación");
+console.log("=====================================================");
+school("3","Brian","Historia","8.0");
+console.log("=====================================================");
+console.log("Se ha añadido una calificación");
+console.log("=====================================================");
+school("3","Carlos","Español","9.5");
+console.log("=====================================================");
+console.log("Se ha añadido una calificación");
+console.log("=====================================================");
+school("3","Carlos","Matemáticas","8.5");
+console.log("=====================================================");
+console.log("Se ha añadido una calificación");
+console.log("=====================================================");
+school("3","Carlos","Geografía","9.0");
+console.log("=====================================================");
+console.log("Se ha añadido una calificación");
+console.log("=====================================================");
+school("3","Carlos","Historia","8.0");
+console.log("=====================================================");
+console.log("Se ha añadido una calificación");
+console.log("=====================================================");
 printStudents();
 console.log("=====================================================");
 printSchoolSubject();
 console.log("=====================================================");
-printRating();
+printRatings();
 console.log("=====================================================");
 
-
+school("4","Enrique","Español","10.0");
+console.log("=====================================================");
+console.log("Se ha modificado una calificación");
+console.log("=====================================================");
+school("4","Enrique","Matemáticas","10.0");
+console.log("=====================================================");
+console.log("Se ha modificado una calificación");
+console.log("=====================================================");
+school("4","Enrique","Geografía","10.0");
+console.log("=====================================================");
+console.log("Se ha modificado una calificación");
+console.log("=====================================================");
+school("4","Enrique","Historia","10.0");
+console.log("=====================================================");
+console.log("Se ha modificado una calificación");
+console.log("=====================================================");
+printRatings();
+console.log("=====================================================");
