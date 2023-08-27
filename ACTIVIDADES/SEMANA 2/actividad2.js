@@ -30,14 +30,12 @@ const printContacts = () => {
 }
 
 const agenda = (actionInput, name, phone) =>{
-    console.log("Vienvenido a su agenda, seleccione la acción que desea realizar: ");
+    console.log("Bienvenido a su agenda, seleccione la acción que desea realizar: ");
     console.log("1.- Agregar contacto")
     console.log("2.- Editar contacto")
     console.log("3.- Eliminar contacto")
 
-    let action = actionInput;
-
-    switch(action){
+    switch(actionInput){
         case "1":
             addContact(name,phone);
             break;
