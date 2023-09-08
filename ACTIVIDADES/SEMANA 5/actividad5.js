@@ -22,7 +22,7 @@ const printListBooks = () => {
     for (let i = 0; i <= library.length - 1; i++){
         console.log(`Libro: ${library[i].title}`);
         console.log(`Autor: ${library[i].author}`);
-        console.log(`Año: ${library[i].year}`);
+        console.log(`Año  : ${library[i].year}`);
         console.log("------------------------------------------------");
     }
 
