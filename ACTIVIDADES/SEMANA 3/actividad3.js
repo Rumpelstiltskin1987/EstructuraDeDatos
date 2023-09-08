@@ -59,9 +59,9 @@ const printRatings = () => {
 
 const school = (actionInput, name, subject, rating) => {
     console.log("Por favor elija una opción: ");
-    console.log("1.- Agregar Estudiantes")
-    console.log("2.- Agregar Materias")
-    console.log("3.- Agregar Calificaciones")
+    console.log("1.- Agregar Estudiantes");
+    console.log("2.- Agregar Materias");
+    console.log("3.- Agregar Calificaciones");
 
     switch(actionInput){
         case "1":
@@ -72,8 +72,10 @@ const school = (actionInput, name, subject, rating) => {
             break;
         case "3":
             addRatings(name,subject,rating);
+            break;
         case "4":
             editRating(name,subject,rating);
+            break;
         default:
             console.log("Opción no válida, ingrese el número de la opción");
     }
