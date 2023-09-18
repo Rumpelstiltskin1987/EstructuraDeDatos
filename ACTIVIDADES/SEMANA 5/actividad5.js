@@ -6,16 +6,41 @@ let library = [
 
 ];
 
-const addbook = (title, author, year) => {
+const addbook = (titleBook, author, year) => {
 
-    book.title = title;
+    book.title = titleBook;
     book.author = author;
     book.year = year;
 
     let copyOfBook = {...book}
 
     library.push(copyOfBook);
-    console.log(`Se ha añadido el libro: ${title}`);
+    console.log(`Se ha añadido el libro: ${titleBook}`);
+}
+
+const deleteBook = (titleBook) => {
+    let index = null;
+    for (let i = 0; i <= library.length - 1; i++){
+        if (library[i].title == titleBook) {
+            index = i;
+            library.splice(index,1);
+            console.log(`Se ha eliminado el libro ${titleBook}`);
+            break;
+        }
+    }
+}
+
+const editBook = (titleBook,author,year) => {
+    for (let i = 0; i <= library.length - 1; i++){
+        if (library[i].title == titleBook) {
+            index = i;
+            library[i].title == titleBook;
+            library[i].author == author;
+            library[i].year == year;
+            console.log(`Se ha editado el libro ${titleBook}`);
+            break;
+        }
+    }
 }
 
 const printListBooks = () => {
@@ -43,10 +68,10 @@ const manageLibrary = (actionInput, titleBook, autorBook, yearBook) => {
             addbook(titleBook, autorBook, yearBook);
             break;
         case "2":
-            addSchoolSubject(subject);
+            editBook(titleBook, autorBook, yearBook);
             break;
         case "3":
-            addRatings(name,subject,rating);
+            deleteBook(titleBook);
             break;
         case "4":
             console.log("*** LISTADO DE LIBROS EXISTENTES ***");
@@ -61,6 +86,8 @@ const manageLibrary = (actionInput, titleBook, autorBook, yearBook) => {
 
 manageLibrary("1","Cien Años de Soledad","Gabriel García Márquez","1967");
 manageLibrary("1","El principito","Antoine de Saint-Exupéry","1943");
-manageLibrary("1","Sincrodestino","Deepak Chopra ","2003");
+manageLibrary("1","Sincrodestino","Deepak Chopra","2003");
 manageLibrary("1","Cuerpos sin edad, mentes sin tiempo","Deepak Chopra","1993");
 manageLibrary("4","","","");
+manageLibrary("3","Cien Años de Soledad","","");
+manageLibrary("2","Cuerpos sin edad, mentes sin tiempo","Deepak Chopra","2000");
